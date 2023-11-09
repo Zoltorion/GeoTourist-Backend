@@ -64,7 +64,7 @@ export const addLocation = async function (user_id, name, latitude, longitude) {
     }
 };
 
-export const QueryLocations = async (user_id) => {
+export const queryLocations = async (user_id) => {
     try {
         const db = client.db('geodb');
         const locations = db.collection('locations');
@@ -81,7 +81,7 @@ export const QueryLocations = async (user_id) => {
     }
 };
 
-export const QueryLocationsByName = async (user_id, name) => {
+export const queryLocationsByName = async (user_id, name) => {
     try {
         const db = client.db('geodb');
         const locations = db.collection('locations');
@@ -98,7 +98,7 @@ export const QueryLocationsByName = async (user_id, name) => {
     }
 }
 
-export const UpdateLocation = async (_id, updatedData) => {
+export const updateLocation = async (_id, updatedData) => {
     try {
         const db = client.db('geodb');
         const locations = db.collection('locations');
@@ -155,7 +155,7 @@ export const UpdateLocation = async (_id, updatedData) => {
     }
 }
 
-export const DeleteLocation = async (_id) => {
+export const deleteLocation = async (_id) => {
     try {
         const db = client.db('geodb');
         const locations = db.collection('locations');
