@@ -89,7 +89,7 @@ export const QueryLocationsByName = async (user_id, name) => {
         const locations = db.collection('locations');
 
         const query = {};
-        query['name'] = new RegExp(name, 'i');
+        query['name.display'] = new RegExp(name, 'i');
 
         const mongo_query = await locations.find({$and: [{user_id: user_id}, query]}).toArray();
         locationsArr = mapLocationMongoToGraphQL(mongo_query);
